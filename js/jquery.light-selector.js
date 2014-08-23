@@ -9,8 +9,6 @@
 
         self.e = e;
         self.origin = {
-            // options: self.e.find('option'),
-            // selected: self.e.find('option:selected')
             options: function () {
                 return self.e.find('option');
             },
@@ -85,7 +83,7 @@
         expand: function () {
             var self = this;
             
-            $(self.getDomElement().wrapper).fadeIn(100);
+            self.getDomElement().wrapper.fadeIn(100);
             self.status.isExpanded = true;
             
             return self;
@@ -93,7 +91,7 @@
         collapse: function () {
             var self = this;
             
-            $(self.getDomElement().wrapper).fadeOut(100);
+            self.getDomElement().wrapper.fadeOut(100);
             self.status.isExpanded = false;
             
             return self;
@@ -177,8 +175,6 @@
     };
 
     $.fn.lightSelector = function (opt) {
-        var instance = new LightSelector(this);
-        instance.init(opt);
-        return instance;
+        return (new LightSelector(this)).init(opt);
     };
 });
