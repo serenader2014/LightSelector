@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/jquery.light-selector.css">
+    <title>jQuery Light Selector</title>
+</head>
+<body>
+    <form action="/">
+        <select name="test1" id="" class="test1">
+            <option value="1">option 1</option>
+            <option value="2">option 2</option>
+            <option value="3">option 3</option>
+            <option value="4">option 4</option>
+            <option value="5">option 5</option>
+        </select>
+
+        <select name="test2" id="" class="test2">
+            <option value="1">option 111</option>
+            <option value="2">option 222</option>
+            <option value="3">option 333</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.light-selector.js"></script>
+    <script>
+        var test1 = $('.test1').lightSelector();
+        var test2 = $('.test2').lightSelector().setSize({
+            width: 200
+        });
+        $('button').on('click', function (event) {
+            event.preventDefault();
+            alert('selector 1 value: ' + $('select[name="test1"]').val() + ', selector 2 value: ' + $('select[name="test2"]').val());
+        });
+    </script>
+</body>
+</html>
