@@ -2,7 +2,7 @@
 
 ## 介绍
 
-一个可以定制 HTML 中的 `select` 标签的小插件。支持动态调整整个元素的大小。
+一个可以定制 HTML 中的 `select` 标签的小插件。
 
 ## 如何使用
 
@@ -36,10 +36,7 @@
     <script type="text/javascript" src="js/jquery.light-selector.js"></script>
     <script>
         var test1 = $('.test1').lightSelector();
-        var test2 = $('.test2').lightSelector().setSize({
-            width: 200,
-            height: 80
-        });
+        var test2 = $('.test2').lightSelector();
         $('button').on('click', function (event) {
             event.preventDefault();
             alert('selector 1 value: ' + $('select[name="test1"]').val() + ', selector 2 value: ' + $('select[name="test2"]').val());
